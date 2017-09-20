@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import promise from "redux-promise";
 
 import PostIndex from './components/post_index';
+import PostsNew from "./components/post_new";
 import Footer from './components/footer';
 import Header from "./components/header";
 import reducers from './reducers';
@@ -18,6 +19,7 @@ ReactDOM.render(
     <div className="app">
       <Header/>
       <Switch>
+        <Route path="/posts/new" component={() =>< PostsNew />}/>
         <Route exact path="/" component={() =>< PostIndex />}/>
         <Route render={() => <h1 className="container">Page not found</h1>}/>
       </Switch>
